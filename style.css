@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: #181818;
+  color: lightskyblue;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin: auto;
+  max-width: 500px;
+}
+
+input#itemInput {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  transform: scale(1) !important;
+}
+.focus {
+  border: 2px solid #62f181 !important;
+  transform: scale(1.2);
+}
+input:focus {
+  border: 1px solid #218838;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #eee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+.items {
+  max-width: 500px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+  width: 500px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  margin: auto;
+}
+
+li.item {
+  border-radius: 10px;
+  background-color: rgb(111, 183, 255);
+  color: #181818;
+  font-weight: bold;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000000;
+  gap: 10px;
+  max-width: 500px;
+  width: 500px;
+  transition: 0.4s;
+}
+li.item p {
+  margin-right: auto;
+}
+
+button.edit {
+  background-color: #ffbf00;
+  margin-left: auto;
+  border-radius: 8px;
+  color: #000000;
+}
+
+button.delete {
+  background-color: #c70a1d;
+  border-radius: 8px;
+  color: #eee;
+}
+
+button:hover.delete {
+  background-color: #c82333;
+}
+
+li.complete {
+  background-color: rgb(56, 96, 136);
+  opacity: 0.5;
+  position: relative;
+}
+li.complete::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #181818;
+  width: 100%;
+  height: 2px;
+  z-index: 20;
+}
+/* إخفاء checkbox الافتراضي */
+li.item .custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* تنسيق العنصر المخصص (المربع) */
+li.item .custom-checkbox .checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: #ccc;
+  display: inline-block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* عند وضع مؤشر الماوس */
+li.item .custom-checkbox:hover input[type="checkbox"] ~ .checkmark {
+  background-color: #e8e8e8;
+}
+
+/* تغيير لون المربع عندما يكون الـ checkbox محددًا */
+li.item .custom-checkbox input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #ffbf00;
+}
+
+/* إضافة علامة صح */
+li.item .custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* عرض العلامة عند التحديد */
+li.item .custom-checkbox input[type="checkbox"]:checked ~ .checkmark::after {
+  display: block;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid rgb(56, 96, 136);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
